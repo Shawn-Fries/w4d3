@@ -31,3 +31,11 @@ def stock_picker(arr)
     end
     result
 end
+
+def move(rods, pos)
+    disc = rods[pos.first].pop
+    raise "a larger disc shouldn't be placed on top of a smaller one" if rods[pos.last].last && rods[pos.last].last < disc
+    rods[pos.last].push(disc)
+    rods
+end
+
