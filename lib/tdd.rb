@@ -39,3 +39,19 @@ def move(rods, pos)
     rods
 end
 
+def won?(completed_game)
+    completed_game == [[], [], [3, 2, 1]]
+end
+
+def play
+    rods = [[3, 2, 1], [], []]
+    until won?(rods)
+        puts 'Please enter a starting and ending position'
+        pos = gets.chomp.split(' ').map {|char| char.to_i}
+       # p pos
+        move(rods, pos)
+    end
+    puts 'You win!'
+end
+
+play
