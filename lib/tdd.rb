@@ -17,3 +17,17 @@ end
 def my_transpose(arr)
     (0...arr.length).map { |i| (0...arr.length).map { |j| arr[j][i] } }
 end
+
+def stock_picker(arr)
+    profit = 0
+    result = [0, 0]
+    (0...arr.length - 1).each do |buy|
+        (buy...arr.length).each do |sell|
+            if arr[sell] - arr[buy] > profit
+                profit = arr[sell] - arr[buy]
+                result = buy, sell
+            end
+        end
+    end
+    result
+end

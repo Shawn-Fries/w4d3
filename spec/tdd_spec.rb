@@ -22,3 +22,12 @@ describe "#my_transpose" do
         expect(my_transpose(arr)).to eq([[0, 3, 6], [1, 4, 7], [2, 5, 8]])
     end
 end
+
+describe "#stock_picker" do
+
+  #  arr = [5, 10, 3, 1, 7, 6, 2]
+    let(:arr) {[5, 10, 3, 1, 7, 6, 2]}
+    it "returns most profitable pair of days to buy and sell" do
+        expect(stock_picker(arr)).to eq([3, 4])
+    end
+end
